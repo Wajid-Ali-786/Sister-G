@@ -1,0 +1,335 @@
+body {
+    margin: 0;
+    font-family: 'Bubblegum Sans', sans-serif;
+    background: linear-gradient(45deg, #FF80C0, #FFB3E6, #FFCCFF, #FFD1DC, #FFAAAA);
+    animation: gradientShift 12s infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    height: auto;
+}
+html {
+    -webkit-text-size-adjust: 100%; /* Prevent text resizing */
+    text-size-adjust: 100%;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    font-size: 5rem;
+    color: #FFF;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 2rem;
+    color: #FFF;
+    text-align: center;
+    margin: 10px 0;
+    animation: fadeIn 3s ease-in-out;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+    margin-top: 30px;
+    padding: 25px 70px;
+    background: linear-gradient(45deg, #FF8C8C, #FF80C0);
+    color: #FFF;
+    font-size: 2.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #FF7F7F, #FF8C8C);
+    transform: scale(1.2);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+.message {
+    display: none;
+    font-size: 2.5rem;
+    color: #FFF;
+    background: rgba(255, 215, 0, 0.9);
+    padding: 40px;
+    border-radius: 25px;
+    margin-top: 40px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+.message .green{
+    color: hsl(122, 100%, 50%);
+}
+.message .blue{
+    color: hsl(246, 96%, 35%);
+}
+.message .pink{
+    color: rgb(0, 173, 189);
+}
+.message .red{
+    color: hsl(0, 100%, 45%);
+}
+.corner-gif {
+    position: fixed;
+    width: 150px; /* Adjust the size as needed */
+    height:150px;
+    z-index: 100; /* Make sure it's on top of other elements */
+    pointer-events: none; /* Prevent the GIFs from interfering with user interactions */
+    border-radius: 20px;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+
+.stars, .hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.star, .heart {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 5s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+.star {
+    width: 7px;
+    height: 7px;
+    background: #FFF;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    background: red;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
+    animation: floatHeart 5s infinite ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes float {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-150px); opacity: 0; }
+}
+
+@keyframes floatHeart {
+    from { transform: translateY(0) scale(1); opacity: 1; }
+    to { transform: translateY(-300px) scale(1.5); opacity: 0; }
+}
+
+.fun-facts {
+    text-align: center;
+    margin-top: 50px;
+    color: #cd3737;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.fun-facts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.fun-facts li {
+    font-size: 2rem;
+    margin: 15px 0;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.fun-facts li:nth-child(odd) {
+    color: #04af09;
+}
+
+.fun-facts li:nth-child(even) {
+    color: #FF80C0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        padding: 20px 50px;
+        font-size: 2rem;
+    }
+
+    .fun-facts li {
+        font-size: 1.5rem;
+    }
+
+    .gallery img {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .button {
+        padding: 15px 40px;
+        font-size: 1.8rem;
+    }
+
+    .fun-facts li {
+        font-size: 1.2rem;
+    }
+
+    .gallery img {
+        width: 100%;
+        max-width: 150px;
+    }
+}
+ /* Basic styling for the password form */
+#password-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background: linear-gradient(45deg, #FF80C0, #FFB3E6, #FFCCFF, #FFD1DC, #FFAAAA);
+    font-family: Arial, sans-serif;
+}
+
+#protected-content {
+    display: none; /* Hide content initially */
+}
+
+input[type="password"] {
+    
+    all: unset; /* Reset browser styles */
+    display: block;
+    font-size: 16px; /* Prevent zoom */
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fffdfe;
+   
+   
+    max-width: 300px;
+    box-sizing: border-box;
+    touch-action: manipulation; /* Prevent unintended gestures */
+}
+
+
+
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background: #FF80C0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #FF5F9D;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    
+    input[type="password"] {
+        width: 100%;
+        max-width: 300px; /* Optional: Limit maximum width */
+    }
+    
+    button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .gallery img {
+        max-width: 100%;
+    }
+
+    .fun-facts li {
+        font-size: 1rem;
+    }
+}
+
